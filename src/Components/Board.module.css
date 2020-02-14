@@ -1,0 +1,31 @@
+.board{
+    width: 420px;
+    height: 420px;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid black;
+}
+
+
+.board {
+    display: grid;
+    width:  500px;
+    height: 430px;
+    padding: 5px;
+    justify-content: center;
+    border: 2px solid rgb(203, 198, 198);
+    grid-template-columns: repeat(7, 70px [col-start]);
+    grid-template-rows: repeat(6, 70px [col-start]);
+    grid-column-gap: 2px;
+    grid-row-gap: 2px;
+    background-color: rgb(46, 65, 172);
+    margin: 0 auto;
+
+  }
+
+  .grid{
+    border-radius: 50%;
+    margin: 0;
+    border: 2px solid black;
+  
+  }
