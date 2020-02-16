@@ -11,7 +11,7 @@ const Board = ({ board, onClick, onClickReset,winner, winningIndices }) => {
             onClick={() => onClick(index)}
             className={styles.grid}
             // to check if the winningIndices includes the index we have then 
-            style={{ backgroundColor: winningIndices.includes(index) ? "#FFFC8E" : grid }}
+            style={{ backgroundColor: grid, border: winningIndices.includes(index) ? `3px dashed #FFFC8E` : `1px solid silver` }}
           ></div>
         );
       })}

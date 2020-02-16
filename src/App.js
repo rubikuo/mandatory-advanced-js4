@@ -5,8 +5,6 @@ import './App.css';
 //arrays in arrays board[7][6] --> board[y*7+x]
 
 const App =()=> {
-
-
   return (
   
     <>

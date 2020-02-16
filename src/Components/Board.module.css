@@ -9,16 +9,16 @@
     height: 500px;
     padding: 25px;
     justify-content: center;
-    border: 2px solid rgb(203, 198, 198);
+    border: 2px solid rgb(151, 152, 152);
     grid-template-columns: repeat(7, 70px [col-start]);
     grid-template-rows: repeat(6, 70px [col-start]);
     grid-column-gap: 5px;
     grid-row-gap: 5px;
     background: rgb(208,223,111);
     background: linear-gradient(90deg, rgba(208,223,111,0.9682247899159664) 0%, rgba(180,245,222,0.923406862745098) 51%, rgba(241,186,224,0.7945553221288515) 94%);
-    border-radius: 20px;
+    border-radius: 25px;
+    box-shadow: 1px 1px 1px rgb(193, 190, 190);
     margin: 0 auto;
-
   }
 
   .grid{
@@ -26,5 +26,5 @@
     transform: rotate(90deg);
     margin: 5px;
     border: 2px solid rgb(109, 109, 109);
-  
+    box-shadow: 1px 0px 1px rgb(67, 66, 66);
   }
