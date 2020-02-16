@@ -1,4 +1,4 @@
-import React, {useReducer} from 'react';
+import React from 'react';
 import Game from "./Components/Game";
 import './App.css';
 
@@ -9,10 +9,9 @@ const App =()=> {
 
   return (
   
-    <div className="container">
-      
+    <>
       <Game />
-    </div>
+    </>
   );
 }
 

@@ -6,10 +6,10 @@ function getInitialState() {
 
   return {
     board: initialboard, // define default box as initialboxes
-    color: "red", // define default color as red
+    color: "#D787E9", // define default color as #D787E9
     filledIndex: [],
     winner: null,
-    winningIndices: [],
+    winningIndices: []
   };
 }
 
@@ -17,17 +17,14 @@ function checkWinner(board) {
   // check rows and jump every 7 cells
   for (let x = 0; x <= 35; x += 7) {
     // to check next 3 neighbours in one row
-    for (let y = x; y < x + 3; y++) {
+    for (let y = x; y <= x + 3; y++) {
       if (board[y] !== "white") {
         if (
           board[y] === board[y + 1] &&
           board[y] === board[y + 2] &&
           board[y] === board[y + 3]
         ) {
-          return [
-              [y, y + 1, y + 2, y + 3],
-              board[y],
-          ];
+          return [[y, y + 1, y + 2, y + 3], board[y]];
         }
       }
     }
@@ -36,7 +33,7 @@ function checkWinner(board) {
   // check columns everytime move one column
   for (let x = 0; x <= 6; x += 1) {
     // check same column lower neighbours
-    // 14 is to stop there so dont go down 
+    // 14 is to stop there so dont go down
     for (let y = x; y <= x + 14; y += 7) {
       if (board[y] !== "white") {
         if (
@@ -44,10 +41,7 @@ function checkWinner(board) {
           board[y] === board[y + 14] &&
           board[y] === board[y + 21]
         ) {
-          return [
-              [y, y + 7, y + 14, y + 21],
-              board[y],
-          ];
+          return [[y, y + 7, y + 14, y + 21], board[y]];
         }
       }
     }
@@ -64,9 +58,8 @@ function checkWinner(board) {
           board[idx] === board[idx + 16] &&
           board[idx] === board[idx + 24]
         ) {
-        
           console.log("someone Win index");
-          return board[idx];
+          return [[idx, idx + 8, idx + 16, idx + 24], board[idx]];
         }
       }
     }
@@ -85,9 +78,15 @@ function checkWinner(board) {
           board[idx] === board[idx - 18]
         ) {
           console.log("someone Win");
-          return board[idx];
+          return [[idx, idx - 6, idx - 12, idx - 18], board[idx]];
         }
       }
+    }
+  }
+
+  for (let i = 0; i <= 41; i++) {
+    if (!board.includes("white")) {
+      return [[], "no Winner"];
     }
   }
 
@@ -103,7 +102,6 @@ const handleColor = (state, action) => {
       if (state.winner) {
         return state;
       }
-      //   console.log(action.index);
 
       const newBoard = [...state.board];
       let column = action.index % 7;
@@ -114,12 +112,12 @@ const handleColor = (state, action) => {
       while (copyfillIndex.includes(index)) {
         index -= 7;
       }
-
+      // to stop the while loop
       if (index < 0) {
         return state;
       }
 
-      console.log(state.filledIndex);
+      // console.log(state.filledIndex);
       newBoard[index] = state.color;
       // in return will update the state
 
@@ -128,10 +126,10 @@ const handleColor = (state, action) => {
       return {
         ...state,
         board: newBoard,
-        color: state.color === "red" ? "blue" : "red",
+        color: state.color === "#D787E9" ? "#7199FF" : "#D787E9",
         filledIndex: [...state.filledIndex, index],
         winner: winner,
-        winningIndices: winningIndices,
+        winningIndices: winningIndices
       };
 
     default:
@@ -151,16 +149,17 @@ const targetGrid = i => {
 const Game = () => {
   const [state, dispatch] = useReducer(handleColor, getInitialState());
   return (
-    <>
+    <div className="container">
       <Board
         board={state.board}
-        winner={state.winner}
-        onClickReset={() => dispatch({ type: "reset" })}
         onClick={i => dispatch(targetGrid(i))}
         winningIndices={state.winningIndices}
       />
-      {state.winner? <p>{state.winner}</p>: null}
-    </>
+      {state.winner ? <p>{state.winner}</p> : null}
+      {state.winner ? (
+        <button onClick={() => dispatch({ type: "reset" })}>Reset</button>
+      ) : null}
+    </div>
   );
 };
 

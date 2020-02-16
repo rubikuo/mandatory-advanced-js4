@@ -10,11 +10,12 @@ const Board = ({ board, onClick, onClickReset,winner, winningIndices }) => {
             key={index}
             onClick={() => onClick(index)}
             className={styles.grid}
-            style={{ backgroundColor: winningIndices.includes(index) ? "gold" : grid }}
-          >{index}</div>
+            // to check if the winningIndices includes the index we have then 
+            style={{ backgroundColor: winningIndices.includes(index) ? "#FFFC8E" : grid }}
+          ></div>
         );
       })}
-      {winner? <button onClick={onClickReset}>Reset</button>: null}
+     
     </div>
   );
 };
