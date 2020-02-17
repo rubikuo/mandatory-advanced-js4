@@ -1,17 +1,15 @@
-import React from 'react';
+import React from "react";
 import Game from "./Components/Game";
-import './App.css';
+import "./App.css";
 
 //arrays in arrays board[7][6] --> board[y*7+x]
 
-const App =()=> {
+const App = () => {
   return (
     <>
       <Game />
     </>
   );
-}
+};
 
 export default App;
-
-

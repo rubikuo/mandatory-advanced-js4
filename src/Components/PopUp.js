@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-
 const PopUp = ({ winner, onClickReset }) => {
  
   return ReactDOM.createPortal(

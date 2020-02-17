@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Board.module.css";
 
-const Board = ({ board, onClick, onClickReset,winner, winningIndices }) => {
+const Board = ({ board, onClick, winningIndices }) => {
   return (
     <div className={styles.board}>
       {board.map((grid, index) => {
