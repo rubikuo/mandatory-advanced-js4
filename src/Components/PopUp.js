@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import {handleColor} from "../Reducer/handleColor";
 
 
 const PopUp = ({ winner, onClickReset }) => {
@@ -8,8 +7,7 @@ const PopUp = ({ winner, onClickReset }) => {
   return ReactDOM.createPortal(
     <div className="popUp">
       <p>{winner}</p>
-
-      <button onClick={onClickReset}>Reset</button>
+      <button className="resetBtn" onClick={onClickReset}>Play Again</button>
     </div>,
     document.body
   );

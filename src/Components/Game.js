@@ -10,6 +10,7 @@ const Game = () => {
   return (
     <>
       <div className="container">
+        <h1 className="header">Connect 4</h1>
         <Board
           board={state.board}
           onClick={i => dispatch(targetGrid(i))}
@@ -21,7 +22,7 @@ const Game = () => {
           winner={state.winner}
           onClickReset={() => dispatch({ type: "reset" })}
         />
-      ) : null}
+       ) : null}
     </>
   );
 };

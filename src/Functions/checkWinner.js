@@ -91,7 +91,7 @@ export const checkWinner = board => {
 
   for (let i = 0; i <= 41; i++) {
     if (!board.includes("white")) {
-      return [[], "No Winner"];
+      return [[], "Draw"];
     }
   }
 
