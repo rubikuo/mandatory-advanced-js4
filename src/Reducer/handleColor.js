@@ -5,7 +5,7 @@ export const handleColor = (state, action) => {
   // define difference situations to change different state result
   switch (action.type) {
     case "reset":
-      return getInitialState;
+      return getInitialState();
     case "change_color":
       if (state.winner) {
         return state;
