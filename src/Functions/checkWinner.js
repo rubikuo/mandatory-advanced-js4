@@ -55,7 +55,7 @@ export const checkWinner = board => {
           board[idx] === board[idx + 16] &&
           board[idx] === board[idx + 24]
         ) {
-          if (board[y] === "#D787E9") {
+          if (board[idx] === "#D787E9") {
             winColor = "Pink";
           } else {
             winColor = "Blue";
@@ -78,7 +78,7 @@ export const checkWinner = board => {
           board[idx] === board[idx - 12] &&
           board[idx] === board[idx - 18]
         ) {
-          if (board[y] === "#D787E9") {
+          if (board[idx] === "#D787E9") {
             winColor = "Pink";
           } else {
             winColor = "Blue";
