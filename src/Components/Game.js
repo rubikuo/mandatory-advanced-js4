@@ -22,7 +22,7 @@ const Game = () => {
           winner={state.winner}
           onClickReset={() => dispatch({ type: "reset" })}
         />
-       ) : null}
+      ) : null}
     </>
   );
 };

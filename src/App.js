@@ -8,6 +8,9 @@ const App = () => {
   return (
     <>
       <Game />
+      <footer className="footer">
+        <p>&copy; Ju-I Kuo || Feb. 2020</p>{" "}
+      </footer>
     </>
   );
 };

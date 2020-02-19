@@ -1,4 +1,4 @@
-*{
+* {
   font-family: "Pangolin", cursive;
 }
 
@@ -9,7 +9,7 @@ body {
 
 .container {
   width: 100vw;
-  height: 100vh;
+  height: 95vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,7 +17,7 @@ body {
   overflow: hidden;
 }
 
-.header{
+.header {
   color: white;
   margin-bottom: 10px;
 }
@@ -39,11 +39,11 @@ body {
   border-right: none;
   border-radius: 10px 0px 0px 10px;
   background: rgba(255, 255, 255, 0.877);
-  animation: dialog .3s linear forwards;
+  animation: dialog 0.3s linear forwards;
   -webkit-animation-timing-function: linear;
 }
 
-.resetBtn{
+.resetBtn {
   width: 100px;
   line-height: 1.2rem;
   font-size: 1.1rem;
@@ -52,7 +52,15 @@ body {
   border-radius: 10px;
 }
 
-button:focus{
+.footer {
+  font-size: 0.8rem;
+  color: white;
+  margin: 10px auto;
+  height: 5vh;
+  text-align: center;
+}
+
+button:focus {
   outline: none;
 }
 
@@ -90,5 +98,3 @@ button:focus{
     box-shadow: 1px 1px 1px rgb(193, 190, 190);
   }
 }
-
-

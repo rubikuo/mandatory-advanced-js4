@@ -71,7 +71,7 @@ export const checkWinner = board => {
     // to go 4 next columns
     for (let y = 0; y < 4; y++) {
       // to start from 21st
-      let idx = (x * 7 + y) + 21;
+      let idx = x * 7 + y + 21;
       if (board[idx] !== "white") {
         if (
           board[idx] === board[idx - 6] &&
